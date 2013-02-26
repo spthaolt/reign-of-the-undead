@@ -12,5 +12,16 @@ This page contains instructions and information about setting up a development e
 = Prerequisites =
 
   ==Software==
+  All of the software below is either [http://www.gnu.org/licenses/gpl.html Free Software] or [http://opensource.org/ Open Source Software], except for the COD Mod Tools, which is governed by Activision/IW's EULA.  In any event, all of the software is available at no-cost.
     ===Subversion===
-    In order to download the source code, you will need a Subversion client.  Subversion is a source code version control system that tracks changes made to source code.  If you do not have a subversion client installed, you must install one.  [http://tortoisesvn.net/ TortoiseSVN] is recommended. 
+    In order to download the source code, you will need a Subversion client.  Subversion is a source code version control system that tracks changes made to source code.  If you do not have a subversion client installed, you must install one.  [http://tortoisesvn.net/ TortoiseSVN] is recommended.
+    ===Perl===
+    The build system is written in Perl, a programming language that excels at text-processing.  If you do not have a recent Perl installed, you must install one.  [http://strawberryperl.com/ Strawberry Perl] is recommended.
+    ===Text Editor===
+    A good text editor is required for programming.  [http://kate-editor.org/get-it/ Kate], the KDE Advanced Text Editor, is strongly recommended.  Other text editors may be sufficient (Notepad isn't sufficient, and Wordpad isn't a text editor), but Kate is known to have the features required.
+    ===GIMP===
+    To edit raster images used in the project,  [http://www.gimp.org/ GIMP], the GNU Image Manipulation Program, together with the [http://code.google.com/p/gimp-dds/ GIMP DDS Plugin], is recommended.
+    ===Inkscape===
+    To edit SVG (Scalable Vector Graphic) files used in the project, you must have an SVG program. [http://inkscape.org/ Inkscape] is recommended.
+    ===COD4 Mod Tools===
+    To build the mod, you must install Activision/IW's [http://callofduty.filefront.com/file/Call_of_Duty_4_Modern_Warfare_Mod_Tools;85947 Mod Tools].
