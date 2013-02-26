@@ -7,6 +7,7 @@ This page contains instructions and information about setting up a development e
 
   * *Applies to:* Rotu 2.2
   * *Tested on:* MS Windows Vista
+  * *Status:* Under development
 
 
 = Prerequisites =
@@ -25,3 +26,21 @@ This page contains instructions and information about setting up a development e
     To edit SVG (Scalable Vector Graphic) files used in the project, you must have an SVG program. [http://inkscape.org/ Inkscape] is recommended.
     ===COD4 Mod Tools===
     To build the mod, you must install Activision/IW's [http://callofduty.filefront.com/file/Call_of_Duty_4_Modern_Warfare_Mod_Tools;85947 Mod Tools].
+
+  ==Get the Source Code==
+  Use your subversion client to download the source code to a local working directory.  Project members will do a read-write checkout, while others will do a read-only anonymous svn checkout.  N.B. A read-only checkout doesn't mean you can't change the code you download, it just means you can't upload your changes back to the subversion repository.
+
+  Your local working directory should *not* be in the COD folder, but rather someplace convenient.  I use C:\Users\Mark\work\rotu\trunk, and most developers use a similar location.
+
+  ==Configure the Build System==
+  The build system is contained primarily within build\makeMod.pl.  The configuration for makeMod.pl is contained in build\makeConfig.pl. Using your text editor, open makeConfig.pl and edit the codPath, modPath, and uploadPath variables as required for your system. Save your changes, then use your text editor to open makeMod.pl.
+  The first line is the path to the perl interpreter you previously installed. You need to edit the line as required, depending on where you installed perl.  Make sure the line begins with the shebang #!, and that it is the very first line in the file.  Save your changes, and close the files.
+
+  ==Build the Mod==
+  To build the mod, open a command line (cmd.exe, i.e. 'Command Prompt'), then cd as required to get to the build directory (C:\Users\Mark\work\rotu\trunk\build or similar). To get an idea of makeMod.pl's features, at the command prompt execute
+    {{{perl makeMod.pl -h}}}
+  Once you've read that brief documentation, execute
+    {{{perl makeMod.pl}}}
+  to build the mod.  Building may take a minute or more, depending on the speed of your computer.  When the script finishes, the mod will have been compiled, installed, and relevant files copied to the uploadPath you specified in makeConfig.pl.
+
+
