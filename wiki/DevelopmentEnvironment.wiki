@@ -7,12 +7,10 @@ This page contains instructions and information about setting up a development e
 
   * *Applies to:* Rotu 2.2
   * *Tested on:* MS Windows Vista
-  * *Status:* Under development
+  * *Status:* Draft
 
 
-= Prerequisites =
-
-  ==Software==
+  ==Prerequisite Software==
   All of the software below is either [http://www.gnu.org/licenses/gpl.html Free Software] or [http://opensource.org/ Open Source Software], except for the COD Mod Tools, which is governed by Activision/IW's EULA.  In any event, all of the software is available at no-cost.
     ===Subversion===
     In order to download the source code, you will need a Subversion client.  Subversion is a source code version control system that tracks changes made to source code.  If you do not have a subversion client installed, you must install one.  [http://tortoisesvn.net/ TortoiseSVN] is recommended.
@@ -36,6 +34,9 @@ This page contains instructions and information about setting up a development e
   The build system is contained primarily within build\makeMod.pl.  The configuration for makeMod.pl is contained in build\makeConfig.pl. Using your text editor, open makeConfig.pl and edit the codPath, modPath, and uploadPath variables as required for your system. Save your changes, then use your text editor to open makeMod.pl.
   The first line is the path to the perl interpreter you previously installed. You need to edit the line as required, depending on where you installed perl.  Make sure the line begins with the shebang #!, and that it is the very first line in the file.  Save your changes, and close the files.
 
+  ==Configure the the Mod==
+  In the src folder are several {{{*_default.cfg}}} configuration files.  These files will need to be edited. Using your text editor, open each of these files and save it in the src folder without the {{{_default}}}, i.e. save {{{server_default.cfg}}} as {{{server.cfg}}}.  *After* you have saved the file under the new name, edit the config settings as appropriate for your system and as desired. {{{@todo playMod_default.bat}}}
+
   ==Build the Mod==
   To build the mod, open a command line (cmd.exe, i.e. 'Command Prompt'), then cd as required to get to the build directory (C:\Users\Mark\work\rotu\trunk\build or similar). To get an idea of makeMod.pl's features, at the command prompt execute
     {{{perl makeMod.pl -h}}}
@@ -43,4 +44,5 @@ This page contains instructions and information about setting up a development e
     {{{perl makeMod.pl}}}
   to build the mod.  Building may take a minute or more, depending on the speed of your computer.  When the script finishes, the mod will have been compiled, installed, and relevant files copied to the uploadPath you specified in makeConfig.pl.
 
-
+  ==Play the Mod==
+  Using your file manager, browse to the modPath you specified earlier, then click on playMod.bat to play the mod.  If it starts up OK, it is safe to copy the files from the uploadPath to your server.
