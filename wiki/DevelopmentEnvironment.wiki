@@ -1,0 +1,16 @@
+#summary How to Set up a Development Environment
+#labels Phase-Implementation,Phase-Deploy
+
+= Introduction =
+
+This page contains instructions and information about setting up a development environment for rotu.
+
+  * *Applies to:* Rotu 2.2
+  * *Tested on:* MS Windows Vista
+
+
+= Prerequisites =
+
+  ==Software==
+    ===Subversion===
+    In order to download the source code, you will need a Subversion client.  Subversion is a source code version control system that tracks changes made to source code.  If you do not have a subversion client installed, you must install one.  [http://tortoisesvn.net/ TortoiseSVN] is recommended. 
