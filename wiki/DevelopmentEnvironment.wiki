@@ -46,3 +46,6 @@ This page contains instructions and information about setting up a development e
 
   ==Play the Mod==
   Using your file manager, browse to the modPath you specified earlier, then click on playMod.bat to play the mod.  If it starts up OK, it is safe to copy the files from the uploadPath to your server.
+
+  ==Errata==
+  The build system has not been tested on MS Window 7 or 8.  There is a good chance it will fail.  I have no facility for testing on those versions of Windows, so if you have problems, please try to find the source of the problem, then open a bug report.
