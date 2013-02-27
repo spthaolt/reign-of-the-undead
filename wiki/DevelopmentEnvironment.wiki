@@ -32,10 +32,13 @@ This page contains instructions and information about setting up a development e
 
   ==Configure the Build System==
   The build system is contained primarily within build\makeMod.pl.  The configuration for makeMod.pl is contained in build\makeConfig.pl. Using your text editor, open makeConfig.pl and edit the codPath, modPath, and uploadPath variables as required for your system. Save your changes, then use your text editor to open makeMod.pl.
+
   The first line is the path to the perl interpreter you previously installed. You need to edit the line as required, depending on where you installed perl.  Make sure the line begins with the shebang #!, and that it is the very first line in the file.  Save your changes, then close the files.
 
   ==Configure the the Mod==
-  In the src folder are several {{{*_default.cfg}}} configuration files.  These files will need to be edited. Using your text editor, open each of these files and save it in the src folder without the {{{_default}}}, i.e. save {{{server_default.cfg}}} as {{{server.cfg}}}.  *After* you have saved the file under the new name, edit the config settings as appropriate for your system and as desired. {{{@todo playMod_default.bat}}}
+  In the src folder are several {{{*_default.cfg}}} configuration files.  These files will need to be edited. Using your text editor, open each of these files and save it in the src folder without the {{{_default}}}, i.e. save {{{server_default.cfg}}} as {{{server.cfg}}}.  *After* you have saved the file under the new name, edit the config settings as appropriate for your system and as desired.
+
+  In the src folder are several {{{*_default.bat}}} batch files.  These files will need to be edited. Using your text editor, open each of these files and save it in the src folder without the {{{_default}}}, i.e. save {{{playMod_default.bat}}} as {{{playMod.bat}}}.  *After* you have saved the file under the new name, edit the batch file as appropriate for your system and as desired.
 
   ==Build the Mod==
   To build the mod, open a command line (cmd.exe, i.e. 'Command Prompt'), then cd as required to get to the build directory (C:\Users\Mark\work\rotu\trunk\build or similar). To get an idea of makeMod.pl's features, at the command prompt execute
