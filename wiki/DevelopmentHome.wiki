@@ -1,5 +1,5 @@
 #summary Development Home Page
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured
 
 = Rotu Development =
 
@@ -9,3 +9,4 @@ The intended audience for this section is fellow developers of the Reign of the 
 == Contents ==
 
   ===[DevelopmentEnvironment Setting Up a Development Environment]===
+  ===[WritingUsefulBugReports How to Write a Useful Bug Report]===
