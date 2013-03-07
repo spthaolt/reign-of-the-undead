@@ -35,7 +35,7 @@ This page provides general instructions on how to install and set up a RotU 2.2 
   * ban.txt (create an empty file, or use a previous ban file)
 
 ===Install Maps===
-  Any map listed in one of the {{{sv_mapvoting}}} dvars in mapvote.cfg need to be installed to the server (or the mod will fail when it tries to load a non-existent map).  Maps should be installed to the usermaps folder, e.g. usermaps\mp_fnrp_bridge.  Many maps are available from [http://www.moddb.com/mods/reign-of-the-undead-zombies ModDB.com]
+  Any map listed in one of the {{{sv_mapvoting}}} dvars in mapvote.cfg need to be installed to the server (or the mod will fail when it tries to load a non-existent map).  Maps should be installed to the usermaps folder, e.g. usermaps\mp_fnrp_bridge.  Many maps are available from [http://www.moddb.com/mods/reign-of-the-undead-zombies ModDB.com].  Most maps from versions 1.15, 2.0, and 2.1 will work with 2.2, as we have made efforts to support legacy maps.  However, some maps are known not to work--these are blacklisted in the source code, and noted in mapvote.cfg.  If you try to load a bad map, it may play wonky, or have massive runtime errors, or it may even prevent the server from starting.
 
 ===Set the Command Line===
   You will need to use the tools made available by your hosting provider to set the command line that should be run to start your RotU server.  For example, here is the command that launches Rotu 2.2 on Pulsar's test server:
