@@ -25,8 +25,8 @@ This page contains instructions and information about setting up a development e
     ===COD4 Mod Tools===
     To build the mod, you must install Activision/IW's [http://callofduty.filefront.com/file/Call_of_Duty_4_Modern_Warfare_Mod_Tools;85947 Mod Tools].
 
-  ==Backup CoD4==
-  Before you get started, we *strongly* recommend that you zip your entire CoD4 folder and stash it someplace safe in case things go horribly wrong.  You've been warned. :-)
+  ==Backup !CoD4==
+  Before you get started, we *strongly* recommend that you zip your entire !CoD4 folder and stash it someplace safe in case things go horribly wrong.  You've been warned. :-)
 
   ==Get the Source Code==
   Use your subversion client to download the source code to a local working directory.  Project members will do a read-write checkout, while others will do a read-only anonymous svn checkout.  N.B. A read-only checkout doesn't mean you can't change the code you download, it just means you can't upload your changes back to the subversion repository.
