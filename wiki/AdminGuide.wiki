@@ -1,0 +1,37 @@
+#summary RotU 2.2 Server Administrators Guide
+#labels Phase-Deploy
+
+*Status:* Draft
+
+*Applies to:* RotU 2.2
+
+*Intended Audience:* Server administrators, and, to a lesser extent, in-game admins
+
+= Introduction =
+
+This document provides basic information on administering a RotU 2.2 server.
+
+
+=== Log Files ===
+
+The two main log files are, by default, console_mp.log and server_mp.log. The former contains all the error and progress information that is written to the !CoD4 console, including dvar settings, compile errors, and run-time errors.  The latter contains chat messages, join/quit events, RotU-specific notices, warnings, and errors, as well as any RotU debugging you may have turned on.
+
+In RotU 2.1 and earlier, there was a bug that over-wrote the console_mp.log file every time the map changed, resulting in the loss of valuable debug information.  That bug is fixed in RotU 2.2, and the console_mp.log file is now only overwritten when you restart the server, typically using a web-based control panel provided by your hosting provider.  The server_mp.log file is *never* over-written.
+
+Because these files are over-written less frequently, it is more likely they will become very large over time.  If you do not need the data they contain, I suggest deleting them when they are above 10 MB or so, just because large files are harder to download and read.
+
+If the server crashes or the game is otherwise buggy, you *must* save a copy of console_mp.log under another name *before* you restart the server, or you will lose that information, making it nearly impossible for us to fix the bug that caused the issue.
+
+==Maps==
+Most maps made for RotU 1.15, 2.0, and 2.1 work sufficiently well with 2.2.  However, about a dozen are known to prevent the server from starting, or to crash the server at start-up, or to generate so many errors that it threatens server stability.  These maps are blacklisted in the source code--the *only* way to start them is by using an rcon tool or putting them in the sv_maprotation dvar temporarily.
+
+In RotU 2.2, the sv_maprotation dvar is *only* used to choose the map to load when the server first starts, so you only need one map listed in that dvar.  All the map config is located in mapvote.cfg.
+
+===Installing New Maps===
+To install a new map, copy the map's folder to the usermaps folder on the server.  Then edit the mapvote.cfg file.  You will need to add the map to one of the sv_mapvoting dvars.  These dvars have a maximum allowable character length--if they are too long, the server will fail to load properly. A length of about 600 characters is known to work just fine.  You may have up to seven sv_mapvoting dvars, which should permit having close to 200 maps eligible to be voted on.
+
+You also need to create a dvar for the "English" name of the map--it is this string that will be the name of the map used in map voting.  Failing to do so will cause a notice to be printed to the server_mp.log file, and the map name (i.e. mp_fnrp_store) will be used as a fallback.
+
+If you try to start a map that isn't in the usermaps folder, when you start the server, you will get a black screen, and there will be no information in the log files.  This can easily happen if you run multiple servers and do not take care to install all maps on all servers, and then copy mapvote.cfg between servers.
+
+There is no harm in having a dvar for the "English" name of a map that isn't installed or listed in one of the sv_mapvoting dvars.
