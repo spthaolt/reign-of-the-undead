@@ -36,6 +36,9 @@ If you try to start a map that isn't in the usermaps folder, when you start the 
 
 There is no harm in having a dvar for the "English" name of a map that isn't installed or listed in one of the sv_mapvoting dvars.
 
+===Customizing a Map===
+If you run a customized version of a map, please do *not* use the same map name as the stock version of the map, as this will cause players to have to download the map again and again as they play on different servers.  Note that changing the name of the folder for the map itself is insufficient, and will not work--you need to be able to edit the source of the map to change the name.  But if you can do that, please use a unique name for your version to limit unnecessary downloading.
+
 ==Uploading Files==
 You may upload `*`.cfg files even when the server is running.  However, they will not be re-read until you restart the server.  You may only upload `*`.iwd files and mod.ff when the server is stopped.  If you have a manual redirect, make sure you upload the new files to the redirect server as well.  If you have an automatic redirect, there may be a download loop for the players until your redirect syncs its files with the main server.  You can bypass the download loop for yourself by manually copying the new binary files to the specific mod's folder in your local !CoD4 install.
 
