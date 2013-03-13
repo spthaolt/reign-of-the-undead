@@ -18,6 +18,8 @@ This page contains instructions and information about setting up a development e
     The build system is written in Perl, a programming language that excels at text-processing.  If you do not have a recent Perl installed, you must install one.  [http://strawberryperl.com/ Strawberry Perl] is recommended.
     ===Text Editor===
     A good text editor is required for programming.  [http://kate-editor.org/get-it/ Kate], the KDE Advanced Text Editor, is strongly recommended.  Other text editors may be sufficient (Notepad isn't sufficient, and Wordpad isn't a text editor), but Kate is known to have the features required.
+    ===Kompare===
+    If you installed the KDE for Windows development tools (for Kate), you also probably installed Kompare.  Kompare is a difference viewer--it can read a unified diff file (`*`.diff) or compare two files and report the differences.  For each incremental release of RotU, we intend to release a unified diff that covers just the `*`.cfg files so you can see the default configuration changes.  You can then apply the changes, either manually or using Kompare, as opposed to overwriting your config files and starting from scratch.  There are other diff programs, but I use Kompare, and haven't investigated any of them.
     ===GIMP===
     To edit raster images used in the project,  [http://www.gimp.org/ GIMP], the GNU Image Manipulation Program, together with the [http://code.google.com/p/gimp-dds/ GIMP DDS Plugin], is recommended.
     ===Inkscape===
