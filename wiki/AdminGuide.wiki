@@ -1,7 +1,7 @@
 #summary RotU 2.2 Server Administrators Guide
 #labels Phase-Deploy,Featured
 
-*Status:* Draft
+*Status:* Final
 
 *Applies to:* RotU 2.2
 
@@ -43,6 +43,15 @@ If you run a customized version of a map, please do *not* use the same map name 
 You may upload `*`.cfg files even when the server is running.  However, they will not be re-read until you restart the server.  You may only upload `*`.iwd files and mod.ff when the server is stopped.  If you have a manual redirect, make sure you upload the new files to the redirect server as well.  If you have an automatic redirect, there may be a download loop for the players until your redirect syncs its files with the main server.  You can bypass the download loop for yourself by manually copying the new binary files to the specific mod's folder in your local !CoD4 install.
 
 Changes to the `*`.cfg files and the rotu`_`svr`_*`.iwd files will never cause a download loop, as these files are never downloaded by players.
+
+==Manual Redirect==
+The games servers I have experience with limit downloads to about 10 KiB/s.  If your personal or clan website has enough storage and better bandwith, you can use that website as your manual redirect.
+
+On your website, create a root folder, e.g. 'rotu'.  Then create the folders 'usermaps' and 'mods' inside the 'rotu' folder.  Inside the 'mods' folder create a folder with the same name as your mod on the game sever, e.g. 'rotu22.myclan'.  Copy all the maps from your game server into the 'usermaps' folder on the redirect, then copy all the `*`.iwd files from the rotu folder on the game server to the same folder on the redirect (except for the `*_`svr`_*`.iwd files).
+
+Then set the redirect in server.cfg, e.g.:
+
+{{{set sv_wwwBaseURL "http://example.com/rotu/"}}}
 
 ==Admin System==
 The admin system is contained in six files:
