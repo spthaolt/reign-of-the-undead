@@ -6,8 +6,8 @@
 This page contains instructions and information about setting up a development environment for rotu.
 
   * *Applies to:* Rotu 2.2
-  * *Tested on:* MS Windows Vista
-  * *Status:* Draft
+  * *Tested on:* MS Windows Vista, MS Windows 7
+  * *Status:* Final
 
 
   ==Prerequisite Software==
@@ -35,10 +35,21 @@ This page contains instructions and information about setting up a development e
 
   Your local working directory should *not* be in the COD folder, but rather someplace convenient.  I use C:\Users\Mark\work\rotu\trunk, and most developers use a similar location.
 
+  For an anonymous svn checkout using TortoiseSVN (for everyone except developers), check out:
+
+  <tt><strong><em>http</em></strong>://reign-of-the-undead.googlecode.com/svn/trunk</tt>
+
+  Developers should checkout using a secure https connection using the credentials you were given:
+
+  <tt><strong><em>https</em></strong>://reign-of-the-undead.googlecode.com/svn/trunk</tt>
+
   ==Configure the Build System==
   The build system is contained primarily within build\makeMod.pl.  The configuration for makeMod.pl is contained in build\makeConfig.pl. Using your text editor, open makeConfig.pl and edit the codPath, modPath, and uploadPath variables as required for your system. Save your changes, then use your text editor to open makeMod.pl.
 
   The first line is the path to the perl interpreter you previously installed. You need to edit the line as required, depending on where you installed perl.  Make sure the line begins with the shebang #!, and that it is the very first line in the file.  Save your changes, then close the files.
+
+  ===Windows 7 Note:===
+  If your !CoD4 install is on a different drive than the source code you downloaded, the mod will not compile as is.  This is because Microsoft changed the 'cd' command.  If this applies to you, delete the file build\makeFF.bat, then rename build\makeFF_win7.bat to build\makeFF.bat.
 
   ==Configure the the Mod==
   In the src folder are several {{{*_default.cfg}}} configuration files.  These files will need to be edited. Using your text editor, open each of these files and save it in the src folder without the {{{_default}}}, i.e. save {{{server_default.cfg}}} as {{{server.cfg}}}.  *After* you have saved the file under the new name, edit the config settings as appropriate for your system and as desired.
@@ -54,6 +65,3 @@ This page contains instructions and information about setting up a development e
 
   ==Play the Mod==
   Using your file manager, browse to the modPath you specified earlier, then click on playMod.bat to play the mod.  If it starts up OK, it is safe to copy the files from the uploadPath to your server.
-
-  ==Errata==
-  The build system has not been tested on MS Windows 7 or 8.  There is a good chance it will fail.  I have no facility for testing on those versions of Windows, so if you have problems, please try to find the source of the problem, then open a bug report.
