@@ -1,7 +1,6 @@
 #summary RotU 2.2 Release Announcement
 #labels Featured,Phase-Deploy
 
-=DRAFT - RotU 2.2 has not been release yet=
 ==RotU 2.2 Release Announcement==
 March 16, 2013
 
