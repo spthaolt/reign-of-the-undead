@@ -18,5 +18,8 @@ Bug reports are *only* for problems with the source code, build system, wiki err
   # What map were you running when the bug appeared? Are you using the most recent version of the map?  Does the bug also appear if you use other maps?
   # Include only one issue per bug report.
   # Don't file a bug report if someone else has already filed one.  Instead, review their bug report, then add any additional information that may be helpful to the already submitted bug report.
-  # Can you read/write English?  Can you speak/understand spoken English?  Do you have skype/xfire (do not put your username in the bug report, we will contact you via e-mail if we think talking to you would be helpful)
+  # Can you read/write English?  Can you speak/understand spoken English?  Do you have skype (do not put your username in the bug report, we will contact you via e-mail if we think talking to you would be helpful)
   # If the issue appears on a public server, what is the server's socket, i.e. ip address + port?  What name do you play under on this server?
+
+=Patches=
+If you have fixed a bug in your copy of the mod, you are welcome to submit a proposed fix.  Simply attach a unified diff to the bug report, and we will review your proposed fix.
