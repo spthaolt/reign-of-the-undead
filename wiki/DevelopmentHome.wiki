@@ -12,3 +12,4 @@ The intended audience for this section is fellow developers of the Reign of the 
   ===[WritingUsefulBugReports How to Write a Useful Bug Report]===
   ===[CommitPolicy Commit Policy]===
   ===[CodingStandards Coding Standards]===
+  ===[MapMakingGuide Map Making Guide]===
