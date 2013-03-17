@@ -12,4 +12,4 @@ We will consider implementing features that server owners and players request.  
 
 =Join Us=
 
-If you agree with our vision, and want to help write and maintain the code, or to work on graphics, and can follow our coding standards and commit policy, we invite you to become a RotU developer.
+If you agree with our vision, and want to help write and maintain the code, or to work on graphics, or to help with translations, and can follow our coding standards and commit policy, we invite you to become a RotU developer.
