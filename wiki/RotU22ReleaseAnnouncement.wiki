@@ -22,7 +22,7 @@ Mapmakers that wish to open-source their maps may use this code repository for t
 We have created many wiki pages of documentation to help our users make full use of this release.  Please read [WritingUsefulBugReports Writing Useful Bug Reports] before submitting any bug reports.
 
 ===Get the Release===
-The binary version is available from the 'Downloads' tab.  The source code is available using a subversion client, as explained in [DevelopmentEnvironment Setting Up a Development Environment].
+The binary version is available from the 'Downloads' tab.  The source code is available using a subversion client, as explained in [DevelopmentEnvironment Setting Up a Development Environment].  For RotU 2.2, checkout revision 37.  If you checkout head, you will get the current code, including changes made since I packaged RotU 2.2 for release.
 
 ===Known Issues===
 We have opened several bug reports detailing a few of the known issues.  I didn't have time to give the usables system the TLC it needs, but I decided we could live with those bugs for a while in the interest of releasing this code.
