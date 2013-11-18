@@ -40,7 +40,13 @@ To set up a LAN server, in server.cfg, you must have
 {{{set dedicated 1}}}.  {{{net_ip}}} and {{{net_port}}} will need to be set to the local machine's ip address and a suitable port.
 
 To set up an Internet server, in server.cfg, you must have
-{{{set dedicated 2}}}.  {{{net_ip}}} and {{{net_port}}} will need to be set to your router's external IP address and a suitable port.  You will also need to set up port forwarding as required, but that is beyond the scope of this document.
+{{{set dedicated 2}}}.  {{{net_ip}}} and {{{net_port}}} will need to be set to your router's external IP address and a suitable port.  You will also need to set up port forwarding as required.  For a server with a {{{net_port}}} of 28960, the ports/protocol to forward are:
+
+  * 20800 UDP
+  * 20810 UDP
+  * 28960 UDP
+
+How to actually forward those ports on your router is beyond the scope of this tutorial.
 
 For both types of servers, you will need to edit host.bat exactly as described for playMod.bat in the Listen server section above.  You can then start the server by running host.bat.
 
