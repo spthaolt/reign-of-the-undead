@@ -31,6 +31,7 @@ This page provides general instructions on how to install and set up a RotU 2.2 
   * easy.cfg
   * mapvote.cfg
   * server.cfg
+  * game.cfg (since RotU 2.2.2)
   * weapons.cfg
   * ban.txt (create an empty file, or use a previous ban file)
 
