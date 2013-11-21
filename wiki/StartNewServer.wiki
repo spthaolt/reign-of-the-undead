@@ -2,26 +2,9 @@
 
 Since: RotU 2.2.1
 
-Status: Draft
-
 = Introduction =
-The files downloaded simply by playing RotU on someone's server are insufficient to properly start a RotU server.  You will need to download additional files and configure your server.
+The files downloaded simply by playing RotU on someone's server are insufficient to properly start a RotU server.  You will need a complete version of RotU--you may download a binary release, or build svn HEAD.
 
-= Details =
+Starting servers locally is buggy in RotU 2.2.1--using RotU 2.2.2 is strongly recommended.  Also, starting a server via the 'Start New Server' menu item isn't the recommended method, because it isn't the easiest method.
 
-In addition to the files downloaded by playing on someone's server you will need to get the RotU server-side files:
-
-  * rotu_svr_scripts.iwd
-  * rotu_svr_custom.iwd
-  * rotu_svr_mapdata.iwd
-  * admin.cfg
-  * server.cfg
-  * mapvote.cfg
-  * weapons.cfg
-  * damage.cfg
-  * didyouknow.cfg
-  * easy.cfg
-
-These files must be in your RotU mod folder.  You can get them from the binary release of RotU 2.2.1, or from any later release.  The default version of the config files are also available from svn HEAD.  The iwd files can be built with makeMod.pl if you have a RotU development environment set up.  You will need to edit the config files as though your were setting up a real public server.
-
-When you try to start the server, 'Pure:' must be set to 'No'.
+For information on playing RotU locally and setting up a server, see the [PlayingRotULocally Playing RotU Locally] wiki.
