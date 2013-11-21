@@ -48,7 +48,7 @@ To set up an Internet server, in server.cfg, you must have
 
 How to actually forward those ports on your router is beyond the scope of this tutorial.
 
-For both types of servers, you will need to edit host.bat exactly as described for playMod.bat in the Listen server section above.  You can then start the server by running host.bat.
+For both types of servers, you will need to edit host.bat exactly as described for playMod.bat in the Listen server section above.  You can then start the server by running host.bat. A desktop shortcut to host.bat will let you start the server with a single click.
 
 == Joining ==
 You will need to edit join.bat so the {{{iw3mp.exe}}} line and the last {{{cd}}} line point to the right mod folder, as you did for host.bat.
@@ -62,4 +62,12 @@ Alternatively, you can add your LAN or Internet Server as a favorite in COD4, th
 Also, if your Internet server is properly configured, it will show up in the in-game list of Internet COD4 servers.
 
 = Using the "Start New Server" Menu =
-TODO
+It is possible to start a server this way, but it isn't recommended, as it isn't as quick and easy using host.bat.
+
+Some things to keep in mind:
+  * You still need to install all the same files and do the same configuration editing as you would if you were using {{{playMod.bat}}}, {{{host.bat}}}, and {{{join.bat}}}.
+  * If 'Dedicated:' is 'No', then the server will be a Listen server.
+  * If 'Dedicated:' is LAN, then 'IP Address:' can be 'localhost' or a private IP address.
+  * If 'Dedicated:' is 'Internet', then 'IP Address:' must be an Internet IP address, typically the external IP address of your router, and you will need to forward the appropriate ports (see above).
+  * {{{startnewserver.cfg}}} is used in lieu of {{{server.cfg}}}
+  * You must not have the {{{dedicated}}} dvar in {{{startnewserver.cfg}}} or the menu won't work properly.
