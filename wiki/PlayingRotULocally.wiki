@@ -3,8 +3,6 @@
 
 Since: RotU 2.2.2
 
-Status: Draft
-
 = Introduction =
 
 This document covers setting up and playing Reign of the Undead on your own computer.
