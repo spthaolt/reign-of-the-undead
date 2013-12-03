@@ -16,7 +16,7 @@ In server.cfg, make sure `dedicated` is set to 0 so it will be a Listen server. 
 
 If you want to edit tradespawns and waypoints, set `umiEditorMode = true` in the map's main `*`.gsc file.  If you want to test it with your new tradespawns and zombies, set `umiEditorMode = false`.
 
-= !Troubleshooting Errors =
+= Troubleshooting Errors =
 
 If there are errors, open console_mp.log and search for " error" (note the leading space).  A single error will often cause many other errors, so the only error we care about is the first one this search finds.
 
