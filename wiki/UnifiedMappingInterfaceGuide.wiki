@@ -1,0 +1,17 @@
+#summary Unified Mapping Interface (UMI) Guide
+
+Since: RotU 2.2.1
+
+Status: Draft
+
+= Introduction =
+
+This document covers using the UMI and the UMI Editor.
+
+= Documentation =
+You should have a copy of `_`umi.gsc and `_`umiEditor.gsc from the debug version of the rotu_svr_scripts.iwd or from svn, as these versions still have the API documentation intact.
+
+= Running a Map in UMI Developer Mode =
+In server.cfg, make sure `dedicated` is set to 0 so it will be a Listen server.  Edit playMod.bat so it will load the map you want to run.  Also edit playMod.bat so that `developer` and `developer_script` are set to 1. You also need to edit `fs_game` so it points to whatever you called your mod instead of the default 'mods\rotudev'. Then you may execute playMod.bat to run the map so you can edit waypoints, tradespawns, etc, or to test your changes.
+
+If you want to edit tradespawns and waypoints, set `umiEditorMode = true` in the map's main `*`.gsc file.  If you want to test it with your new tradespawns and zombies, set `umiEditorMode = false`.
