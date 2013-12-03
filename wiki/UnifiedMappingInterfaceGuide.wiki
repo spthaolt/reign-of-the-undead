@@ -15,3 +15,27 @@ You should have a copy of `_`umi.gsc and `_`umiEditor.gsc from the debug version
 In server.cfg, make sure `dedicated` is set to 0 so it will be a Listen server.  Edit playMod.bat so it will load the map you want to run.  Also edit playMod.bat so that `developer` and `developer_script` are set to 1. You also need to edit `fs_game` so it points to whatever you called your mod instead of the default 'mods\rotudev'. Then you may execute playMod.bat to run the map so you can edit waypoints, tradespawns, etc, or to test your changes.
 
 If you want to edit tradespawns and waypoints, set `umiEditorMode = true` in the map's main `*`.gsc file.  If you want to test it with your new tradespawns and zombies, set `umiEditorMode = false`.
+
+= TroubleShooting Errors =
+
+If there are errors, open console_mp.log and search for " error" (note the leading space).  A single error will often cause many other errors, so the only error we care about is the first one this search finds.
+
+There are two types of errors: compile errors and runtime errors. A compile error usually means you have a typo in your code, or you called a function that doesn't exist, or called a function with incorrect parameters, or you made some other syntax error.  A runtime error happens while the code is running, and the most often cause is that a variable is undefined.
+
+== Error: Loading non-existent tradespawns ==
+{{{
+******* script runtime error *******
+undefined is not an array, string, or vector: (file 'maps/mp/_umi.gsc', line 610)
+    if (!isDefined(level.tradespawns[int(weapons[0])])) {
+                         *
+Error: called from:
+(file 'maps/mp/mp_damnalley.gsc', line 72)
+        buildWeaponShopsByTradespawns("0 2 4 6 8 10 12");
+        *
+Error: started from:
+(file 'maps/mp/_umi.gsc', line 929)
+        wait .5;
+        *
+Error: ************************************
+}}}
+This runtime error happens because in the map's main `*`.gsc file, you are telling it to load weapon shops by tradespawns, but there aren't any.  Either the tradespawns file doesn't exist, or you neglected to load it.  You may also be running the map with `umiEditorMode = false` when you mean to to have it be `true`.
