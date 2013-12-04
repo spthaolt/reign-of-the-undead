@@ -18,6 +18,16 @@ If you want to edit tradespawns and waypoints, set `umiEditorMode = true` in the
 
 With `umiEditorMode = true`, the game won't actually start, so you won't be bothered by zombies. If `umiEditorMode = false` the game will start, and you will get zombies.
 
+= Showing Spawnpoints =
+In the map's main `*`.gsc file, we typically have a code block:
+{{{
+    if (umiEditorMode) {
+        devDrawAllPossibleSpawnpoints();
+        maps\mp\_umiEditor::initMapEditor();
+    } else {
+}}}
+The call to `devDrawAllPossibleSpawnpoints();` draws a red vertical laser at each possible spawnpoint.  The purpose of this is to prevent you from placing a tradespawn (shop or weapons upgrade) on top of or too close to a spawnpoint.
+
 = Troubleshooting Errors =
 
 If there are errors, open console_mp.log and search for " error" (note the leading space).  A single error will often cause many other errors, so the only error we care about is the first one this search finds.
