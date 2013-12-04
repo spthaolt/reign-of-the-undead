@@ -11,6 +11,9 @@ This document covers using the UMI and the UMI Editor.
 = Documentation =
 You should have a copy of `_`umi.gsc and `_`umiEditor.gsc from the debug version of the rotu_svr_scripts.iwd or from svn, as these versions still have the API documentation intact.
 
+= Bugs =
+Do *NOT* delete a waypoint link, as this will cause the game to crash.  Instead, delete the waypoint, then recreate the waypoint, linking it as you like.  At some point I will fix this bug, but for now, just work around it.
+
 = General =
 To load a non-RotU map or to override a RotU map generally requires three files(e.g. for the map mp_damnalley):
   * mp_damnalley.gsc, the map's main `*`.gsc file
@@ -39,6 +42,14 @@ In the map's main `*`.gsc file, we typically have a code block:
     } else {
 }}}
 The call to `devDrawAllPossibleSpawnpoints();` draws a red vertical laser at each possible spawnpoint.  The purpose of this is to prevent you from placing a tradespawn (shop or weapons upgrade) on top of or too close to a spawnpoint.
+
+= Waypoints =
+When running a map in umiEditorMode, nearby linked waypoints are marked by blue flags.  Unlinked waypoints are marked with red flags. While creating a waypoint link, you will be carrying a black flag.
+
+Waypoint links are drawn in a variety of colors, and they are drawn 10 units higher than they actually are for better visibility.  The current waypoint link is always drawn in bright green.  On a very large map, with too many waypoint links, we aren't able to draw them all.  In that case, we only draw the links within 2500 units of the devPlayer.
+
+== Moving Waypoints ==
+You make pick up and move linked and unlinked waypoints. Use 'f' to pick up the nearest waypoint, then 'fire' to drop it in its new location.
 
 = Troubleshooting Errors =
 
