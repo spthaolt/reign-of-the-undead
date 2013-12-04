@@ -4,6 +4,9 @@ Since: RotU 2.2.1
 
 Status: Draft
 
+= Contents =
+<wiki:toc max_depth="2" />
+
 = Introduction =
 
 This document covers using the UMI and the UMI Editor.
