@@ -100,7 +100,13 @@ Waypoint links are drawn in a variety of colors, and they are drawn 10 units hig
     * Place a line of waypoint links along natural lines of drift, such as along rivers, ditches, ridges, roads, paths, and valleys.
 
 = Tradespawns =
-The shops and weapon upgrades are collectively called tradespawns.
+The shops and weapon upgrades are collectively called tradespawns. The number of equipment shops in a map must equal the number of weapon upgrades in the map.
+
+Use the 'give equipment shop' command to be given an equipment shop.  You can then emplace it with 'fire'.  You may also pick up an equipment shop and move it.  When you emplace the shop, it will position itself on the plane representing solid ground.  If the shop is wildly rotated, it means you tried to put it someplace it can't be, such as partially in a wall or partially in mid-air.  In that case, just pick it up and try again.
+
+Use the 'give weapon upgrade' command to be given a weapons crate.  Weapon upgrades are handled the way as the equipment shops.
+
+When you have the tradespawns positioned where you like them, use the 'save tradespawns' command to save the data to the server_mp.log.
 
 = Creating and Updating Waypoint and Tradespawn Files =
 Waypoint and tradespawn files are handled the same way; for this example we will use a waypoints file.
