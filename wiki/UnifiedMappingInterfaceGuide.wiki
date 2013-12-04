@@ -33,6 +33,8 @@ If you want to edit tradespawns and waypoints, set `umiEditorMode = true` in the
 
 With `umiEditorMode = true`, the game won't actually start, so you won't be bothered by zombies. If `umiEditorMode = false` the game will start, and you will get zombies.
 
+The umiEditor commands follow the devPlayer, which is the player specified in `admin.cfg` in the `set admin_forced_guid ""` line.
+
 = Showing Spawnpoints =
 In the map's main `*`.gsc file, we typically have a code block:
 {{{
