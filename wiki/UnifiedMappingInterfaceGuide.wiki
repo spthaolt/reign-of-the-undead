@@ -11,6 +11,18 @@ This document covers using the UMI and the UMI Editor.
 = Documentation =
 You should have a copy of `_`umi.gsc and `_`umiEditor.gsc from the debug version of the rotu_svr_scripts.iwd or from svn, as these versions still have the API documentation intact.
 
+= General =
+To load a non-RotU map or to override a RotU map generally requires three files(e.g. for the map mp_damnalley):
+  * mp_damnalley.gsc, the map's main `*`.gsc file
+  * mp_damnalley_waypoints.gsc, the waypoints for the map
+  * mp_damnalley_tradespawns.gsc, the tradespawns (shop and weapon upgrades) for the map.
+
+These files should be put into custom_maps\maps\mp folder if using svn, or in maps\mp folder in the rotu_svr_mapdata.iwd if you are using the binary release of RotU.
+
+You will need to use a text editor to create or edit the main `*`.gsc file.  For the other two, you can make the waypoints and tradespawns in-game, then save them as described in this guide.
+
+After you make changes to these files, you will need to rebuild the mod with {{{perl makeMod.pl -s}}} if you are using svn, otherwise you will need to manually re-zip rotu_svr_mapdata.iwd if you using the binary release of RotU.
+
 = Running a Map in UMI Developer Mode =
 In server.cfg, make sure `dedicated` is set to 0 so it will be a Listen server.  Edit playMod.bat so it will load the map you want to run.  Also edit playMod.bat so that `developer` and `developer_script` are set to 1. You also need to edit `fs_game` so it points to whatever you called your mod instead of the default 'mods\rotudev'. Then you may execute playMod.bat to run the map so you can edit waypoints, tradespawns, etc, or to test your changes.
 
