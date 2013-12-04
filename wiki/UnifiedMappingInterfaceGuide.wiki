@@ -12,7 +12,7 @@ Status: Draft
 This document covers using the UMI and the UMI Editor.
 
 = Documentation =
-You should have a copy of `_`umi.gsc and `_`umiEditor.gsc from the debug version of the rotu_svr_scripts.iwd or from svn, as these versions still have the API documentation intact.
+You should have a copy of [https://code.google.com/p/reign-of-the-undead/source/browse/trunk/src/maps/mp/_umi.gsc _umi.gsc] and [https://code.google.com/p/reign-of-the-undead/source/browse/trunk/src/maps/mp/_umiEditor.gsc _umiEditor.gsc] from the debug version of the rotu_svr_scripts.iwd or from svn, as these versions still have the API documentation intact.
 
 = Bugs =
 Do *NOT* delete a waypoint link, as this will cause the game to crash.  Instead, delete the waypoint, then recreate the waypoint, linking it as you like.  At some point I will fix this bug, but for now, just work around it.
