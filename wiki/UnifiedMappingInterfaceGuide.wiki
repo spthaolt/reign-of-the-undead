@@ -48,21 +48,61 @@ In the map's main `*`.gsc file, we typically have a code block:
 }}}
 The call to `devDrawAllPossibleSpawnpoints();` draws a red vertical laser at each possible spawnpoint.  The purpose of this is to prevent you from placing a tradespawn (shop or weapons upgrade) on top of or too close to a spawnpoint.
 
+= Commands =
+The UMI Editor commands are available from the menu by pressing b then 5.  Admin commands are available from b then 4, in case you need to teleport through an obstacle to get to a waypoint location.  Additionally, there are keyboard shortcuts for some commands, as noted in the HUD.
+
 = Waypoints =
 When running a map in umiEditorMode, nearby linked waypoints are marked by blue flags.  Unlinked waypoints are marked with red flags. While creating a waypoint link, you will be carrying a black flag.
 
 Waypoint links are drawn in a variety of colors, and they are drawn 10 units higher than they actually are for better visibility.  The current waypoint link is always drawn in bright green.  On a very large map, with too many waypoint links, we aren't able to draw them all.  In that case, we only draw the links within 2500 units of the devPlayer.
 
-== Dropping a Waypoint ==
-Whenever you drop a waypoint, like when you emplace or move a waypoint, the waypoint flag will drop to the ground or a solid surface, and that point will be the actual waypoint.  There is no need to have a waypoint in the air, but if you want one in the air, you will need to manually edit the waypoint in the generated file.
+  == Dropping a Waypoint ==
+  Whenever you drop a waypoint, like when you emplace or move a waypoint, the waypoint flag will drop to the ground or a solid surface, and that point will be the actual waypoint.  There is no need to have a waypoint in the air, but if you want one in the air, you will need to manually edit the waypoint in the generated file.
 
-== Moving Waypoints ==
-You make pick up and move linked and unlinked waypoints. Use 'f' to pick up the nearest waypoint, then 'fire' to drop it in its new location.
+  == Moving Waypoints ==
+  You make pick up and move linked and unlinked waypoints. Use 'f' to pick up the nearest waypoint, then 'fire' to drop it in its new location.
 
-== Linking a Waypoint ==
-== Deleting a Waypoint ==
-== Adding Waypoints ==
-== Saving Waypoints ==
+  == Linking a Waypoint ==
+  To create a link between two waypoints, use the 'link waypoint' command.  The command will begin a link from the closest waypoint, and will give you a black flag. Plant this flag near the waypoint that will be the other end of the waypoint link.  If your waypoints are too close to each other, you may need to rotate or otherwise adjust your position so your body is closer to the end of the waypoint link than it is to the beginning of the link.
+
+  == Deleting a Waypoint Link ==
+  Do *NOT* delete a waypoint link, as this will cause the game to crash.  Instead, delete the waypoint, then recreate the waypoint, linking it as you like.
+
+  == Deleting a Waypoint ==
+  To delete a linked or unlinked waypoint, use the 'delete waypoint' command.  The command will delete the closest waypoint, and if it is a linked waypoint, will also delete all the waypoint links that waypoint has.
+
+  == Adding Waypoints ==
+  To add new waypoints to a map, use 'waypoint mode' via the 'toggle give waypoints' command. When you turn on waypoint mode, you will be given an unlinked waypoint flag (a red flag).  When you have positioned the flag where you want it, 'fire' to emplace the flag.  You will then be given another unlinked waypoint flag so you can continue adding waypoints.
+
+  There is a limit of 20 unlinked waypoints.  When you have emplaced the last available unlinked waypoint, 'waypoint mode' will toggle off, and you will be told you need to link some waypoints to recycle the flags.
+
+  If you want to stop emplacing unlinked waypoints before you have emplaced them all, just 'toggle give waypoints' to turn off 'waypoint mode'.
+
+  == Saving Waypoints ==
+  To save the waypoints, use the 'save waypoints' command.  The command will write a proper waypoints file to the server_mp.log file.  You should save your work often in case the game crashes.  I like to save them whenever I'm done emplacing or linking a set of waypoints.
+
+  == Autolinking Waypoints ==
+  After you have emplaced a bunch of unlinked waypoints, you may use the 'autolink waypoints' command to intelligently create waypoint links for you.  The autolinking algorithm is quite fast, and it will create correct links about 75% of the time.  It assumes that the unlinked waypoints are in a small contiguous area, so if you plan on using this command, work on one area of the map at a time.  After the waypoints are auto-linked, the command automatically saves the waypoints to server_mp.log.
+
+  For any links the command creates that you don't want, you may delete the link.  However, note the bug and the workaround described under 'Deleting a Waypoint Link'.
+
+  == Waypoint Types ==
+  You can change the type of the current (closest) waypoint with the 'cycle waypoint type' command.  RotU doesn't use this currently, but the new AI under development will.
+
+  == Best Practices ==
+    * Place a waypoint at the exact bottom and top of each flight of stairs or ramp.
+    * If two flights of stairs connect at 90 degrees at a landing, place one additional waypoint on that landing.
+    * If two flights of stairs connect at a landing but keep going in the same direction, place one additional waypoint on the landing.
+    * If two flights of stairs connect at 180 degrees at a landing, place two additional waypoints on the landing.
+    * Use enough waypoints.  A good rule of thumb is to have them no further apart than twice the height of a player.
+    * Avoid placing a waypoint so close to an obstruction that a zombie would be inside the obstruction if it were at the waypoint or following the waypoint link.
+    * If several waypoints are linked in a line, offset each waypoint slightly so the zombie won't travel in a straight line while following the links.
+    * Place a line of waypoint links along natural lines of drift, such as along rivers, ditches, ridges, roads, paths, and valleys.
+
+= Tradespawns =
+The shops and weapon upgrades are collectively called tradespawns.
+
+= Creating and Updating Waypoint and Tradespawn Files =
 
 = Troubleshooting Errors =
 
@@ -70,8 +110,8 @@ If there are errors, open console_mp.log and search for " error" (note the leadi
 
 There are two types of errors: compile errors and runtime errors. A compile error usually means you have a typo in your code, or you called a function that doesn't exist, or called a function with incorrect parameters, or you made some other syntax error.  A runtime error happens while the code is running, and the most often cause is that a variable is undefined.
 
-== Error: Loading non-existent tradespawns ==
-{{{
+  == Error: Loading non-existent tradespawns ==
+  {{{
 ******* script runtime error *******
 undefined is not an array, string, or vector: (file 'maps/mp/_umi.gsc', line 610)
     if (!isDefined(level.tradespawns[int(weapons[0])])) {
@@ -86,4 +126,4 @@ Error: started from:
         *
 Error: ************************************
 }}}
-This runtime error happens because in the map's main `*`.gsc file, you are telling it to load weapon shops by tradespawns, but there aren't any.  Either the tradespawns file doesn't exist, or you neglected to load it.  You may also be running the map with `umiEditorMode = false` when you mean to to have it be `true`.
+  This runtime error happens because in the map's main `*`.gsc file, you are telling it to load weapon shops by tradespawns, but there aren't any.  Either the tradespawns file doesn't exist, or you neglected to load it.  You may also be running the map with `umiEditorMode = false` when you mean to to have it be `true`.
